@@ -1,9 +1,10 @@
 require('dotenv').config();
 const express = require('express');
-const mysql = require('mysql');
+const { Pool } = require('pg');  // PostgreSQL ke liye pg module
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -12,20 +13,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Static files serve karna (CSS, JS ke liye)
 app.use(express.static(path.join(__dirname, 'public')));
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'sharn',
-    database: 'feedback_app'
+// ✅ Render PostgreSQL Database Connection
+const db = new Pool({
+    connectionString: process.env.DATABASE_URL, // Render ka database URL
+    ssl: { rejectUnauthorized: false }  // SSL required hai Render pe
 });
 
-db.connect((err) => {
-    if (err) {
-        console.error('Database connection failed:', err.message);
-    } else {
-        console.log('✅ Database connected successfully!');
-    }
-});
+db.connect()
+    .then(() => console.log("✅ Connected to Render PostgreSQL Database!"))
+    .catch(err => console.error("❌ Database connection failed:", err.message));
 
 // Route to load the form
 app.get('/', (req, res) => {
@@ -33,23 +29,24 @@ app.get('/', (req, res) => {
 });
 
 // Route to submit feedback
-app.post('/submit-feedback', (req, res) => {
+app.post('/submit-feedback', async (req, res) => {
     const { name, message } = req.body;
     if (!name || !message) {
         return res.status(400).json({ error: 'Please enter name and feedback' });
     }
-    
-    const sql = 'INSERT INTO feedback (name, message) VALUES (?, ?)';
-    db.query(sql, [name, message], (err, result) => {
-        if (err) {
-            console.error('❌ Error inserting feedback:', err.message);
-            return res.status(500).json({ error: 'Failed to submit feedback' });
-        }
+
+    try {
+        const sql = 'INSERT INTO feedback (name, message) VALUES ($1, $2)';
+        await db.query(sql, [name, message]);
         res.status(200).json({ message: '✅ Feedback submitted successfully!' });
-    });
+    } catch (err) {
+        console.error('❌ Error inserting feedback:', err.message);
+        res.status(500).json({ error: 'Failed to submit feedback' });
+    }
 });
 
 // Start server
-app.listen(3000, () => {
-    console.log('🚀 Server running on http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
