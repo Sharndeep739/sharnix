@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
-    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Submit Your Feedback</h2>
-        <input type="text" id="name" placeholder="Your Name">
-        <textarea id="message" placeholder="Your Feedback"></textarea>
-        <button onclick="submitFeedback()">Submit</button>
+    <h1>Feedback Form</h1>
+    <form id="feedbackForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
         
-        <h2>Feedback List</h2>
-        <div id="feedback-list"></div>
-    </div>
-    <script src="../public/script.js"></script>
+        <label for="message">Your Feedback:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div id="responseMessage"></div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+
+            const response = await fetch('/submit-feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, message }),
+            });
+
+            const result = await response.json();
+            document.getElementById('responseMessage').innerText = result.message;
+        });
+    </script>
 </body>
 </html>
