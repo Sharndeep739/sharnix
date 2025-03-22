@@ -1,9 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
 <form id="feedbackForm">
     <input type="text" id="name" name="name" placeholder="Your Name" required>
     <textarea id="message" name="message" placeholder="Your Feedback" required></textarea>
     <button type="submit">Submit Feedback</button>
 </form>
 
+
+</body>
 <script>
 document.getElementById('feedbackForm').addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -32,3 +45,4 @@ document.getElementById('feedbackForm').addEventListener('submit', async functio
     }
 });
 </script>
+</html>
