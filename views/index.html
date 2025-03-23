@@ -4,67 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sharnix</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
     <!-- header tag -->
     <header>
-        <div class="nav">
-            SharniX
-        </div>
-        <div class="nav2">
-            
-                <div id="menuLogo">
-                    <i class="fa-solid fa-lines-leaning"></i>
-                </div>
-            <div class="computer-lang">
-                <a href="update.html"><div id="box1">JAVA</div></a>
-                <a href="kotlin-Eng.html"><div id="box2">KOTLIN</div></a>
-            </div>
-            <div class="language">
-                <a href="index.html"><div id="box1">ENGLISH</div></a>
-                <a href="Hindex.html"><div id="box2">HINGLISH</div></a>
-            </div>
-        </div>
+        <h1>Kotlin</h1>
     </header>
     <!-- main tag -->
     <main>
-        <div class="outer">
-            <div id="row1">
-                <div id="box1"></div>
-                <div id="box2"></div>
-                <div id="box3"></div>
-            </div>
-            <div id="row2">
-                <div id="box1"></div>
-                <div id="box2"></div>
-                <div id="box3"></div>
-            </div>
-            <div id="row3">
-                <div id="box1"></div>
-                <div id="box2"></div>
-                <div id="box3"></div>
-            </div>
+        <div class="container">
+            <h2>Variables</h2>
+            <p>In Kotlin, you can declare variables using <code>val</code> (immutable) and <code>var</code> (mutable).</p>
+            <pre>
+    val name = "Sharn" // Immutable variable
+    var age = 20 // Mutable variable
+            </pre>
+    
+            <!-- explicitly -->
+    
+            <h2>Explicitly Declaring Data Types</h2>
+            <p>Kotlin allows you to explicitly declare data types.</p>
+            <pre>
+    val number: Int = 10
+    val pi: Double = 3.14
+            </pre>
+    
+            <!-- null -->
+    
+            <h2>Null Variables</h2>
+            <p>In Kotlin, variables can be nullable using <code>?</code>.</p>
+            <pre>
+    var nullableString: String? = null
+            </pre>
+    
+            <!-- lateinit -->
+    
+            <h2>Lateinit and By Lazy</h2>
+            <p>Using <code>lateinit</code> for variables that will be initialized later:</p>
+            <pre>
+    lateinit var name: String
+    name = "Sharn"
+            </pre>
+            <p>Using <code>by lazy</code> for variables that are initialized when first accessed:</p>
+            <pre>
+    val lazyValue: String by lazy {
+        "This is a lazy initialization"
+    }
+            </pre>
+    
+            <!-- methoda and funtion -->
+    
+            <h2>Methods and Functions</h2>
+            <p>Defining and calling functions in Kotlin:</p>
+            <pre>
+    fun greet() {
+        println("Hello, Kotlin!")
+    }
+    greet()
+            </pre>
+    
+            <!-- companion objenct -->
+    
+            <h2>Companion Object</h2>
+            <p>Using companion objects in Kotlin:</p>
+            <pre>
+    class MyClass {
+        companion object {
+            fun myFunction() {
+                println("Hello from Companion Object")
+            }
+        }
+    }
+    MyClass.myFunction()
+            </pre>
+    
+            <!-- kotline class  -->
+            
+            <h2>Kotlin Classes</h2>
+    <p>How to define class in kotlin:</p>
+    <pre>
+    class Person(val name: String, val age: Int) {
+        fun greet() {
+            println("Hello, my name is $name and I am $age years old.")
+        }
+    }
+    
+    val p = Person("Sharn", 20)
+    p.greet()
+    </pre>
+    <!-- to be cont...... -->
         </div>
         <a href="update.html"><div class="update"></div></a>
 
     </main>
     <!-- footer tag -->
     <footer>
-        <p>&copy; 2025 Sharandeep Singh | 
-            <a href="https://instagram.com/your_instagram" target="_blank">Instagram</a> | 
-            <a href="mailto:your_email@gmail.com">Gmail</a> | 
-            <a href="#about">About Me</a>
-        </p>
-        <div class="logo">
-            <a href="https://www.instagram.com/sharn_b739/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/Sharndeep739" target="_blank"><i class="fa-brands fa-github"></i></a> 
-            <a href=""><i class="fa-solid fa-at"></i></a>
-            <a href="https://wa.me/917814149127" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
+        <span>sharn</span>
         <form id="feedbackForm">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <textarea id="message" name="message" placeholder="Your Feedback" required></textarea>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Submit Feedback</button>
         </form>
     </footer>

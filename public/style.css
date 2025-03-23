@@ -1,333 +1,67 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
-body{
-    background-image: url("dark%207.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: auto; /* Removed 100vh to make the content scrollable */
-    min-height: 100vh; /* Ensure it always covers the viewport height */
-    background-attachment: fixed;
+header {
+    background: #6200ea;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
-.nav{
-    height: 60px;
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    color: #6200ea;
+}
+pre {
+    background: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+footer{
+    height: 320px;
     width: 100%;
-    background-color: rgb(37, 37, 37);
-    color: white;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    font-weight: 700;
-}
-.nav2{
-    position: relative;
-    left: 10px;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-header .menu{
-    margin-top: 10px;
-    height: 30px;
-    width: 100%;
-}
-.menu #menuLogo{
-    display: inline-block;
-    left: 7px;
-}
- i{
-    font-size: 26px;
-    color: white;
-}
-#menuLogo i:hover{
-    cursor: pointer;
-}
-.language{
-    
-    height: 40px;
-    width: 200px;
-    display: flex;
-    justify-content: space-around;
-}
-.language div{
-    height: 100%;
-    width: 40%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    cursor: pointer;
-}
-.computer-lang{
-    height: 40px;
-    width: 150px;
-    display: flex;
-    justify-content: space-between; 
-}
-.computer-lang div{
-    height: 100%;
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(229, 255, 0, 0.616);
-}
-.computer-lang a{
-    text-decoration: none;
-
-}
-.computer-lang div:hover{
-    cursor: pointer;
-    filter: drop-shadow(0px 0px 10px white);
-}
-
-/* code for phone */
-
-
-/* outer */
-.outer{
-    height: 600px;
-    width: 95%;
-    position: relative;
-    top: 40px;
-    left: 30px;
+    background-color: #333;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 }
-.outer div{
-    height: 150px;
-    width: 95%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
+#name{
+    height: 20px;
 }
-#row1 div{
-    height: 100%;
-    width: 20%;
-
-}
-#row2 div{
-    height: 100%;
-    width: 20%;
-    
-}
-#row3 div{
-    height: 100%;
-    width: 20%;
-    
-}
-
-
-/* anroid image */
-
-
-#row1 #box1{
-    background-image: url("android\ studio.png");
-    background-size: cover;
-    background-size: 75%;
-    background-repeat: no-repeat;
-}
-#row1 #box1:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* github image */
-
-#row1 #box2{
-    background-image: url("github-png.png");
-    background-size: cover;
-    background-size: 95%;
-    background-repeat: no-repeat;
-}
-#row1 #box2:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* html image */
-#row1 #box3{
-    background-image: url("html5-logo.png");
-    background-size: cover;
-    background-size: 55%;
-    background-repeat: no-repeat;
-}
-#row1 #box3:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* css image */
-#row2 #box1{
-    background-image: url("css-logo.png");
-    background-size: cover;
-    background-size: 50%;
-    background-repeat: no-repeat;
-}
-#row2 #box1:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* kali image */
-#row2 #box2{
-    background-image: url("kali-logo.png");
-    background-size: cover;
-    background-size: 60%;
-    background-repeat: no-repeat;
-}
-#row2 #box2:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* java image */
-#row2 #box3{
-    background-image: url("java-logo.png");
-    background-size: cover;
-    background-size: 73%;
-    background-repeat: no-repeat;
-}
-#row2 #box3:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* cpp image */
-#row3 #box1{
-    background-image: url("cpp-logo.png");
-    background-size: cover;
-    background-size: 55%;
-    background-repeat: no-repeat;
-}
-#row3 #box1:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* c lang image */
-#row3 #box2{
-    background-image: url("c-logo.png");
-    background-size: cover;
-    background-size: 55%;
-    background-repeat: no-repeat;
-}
-#row3 #box2:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-/* my sql image */
-#row3 #box3{
-    background-image: url("mysql-logo.png");
-    background-size: cover;
-    background-size: 55%;
-    background-repeat: no-repeat;
-
-    /* remove prprty */
-    filter: contrast(0);
-}
-#row3 #box3:hover{
-    cursor: pointer;
-    border: none;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-}
-
-
-
-
-@media (max-width: 480px) {
-    body {
-        background-image: url("LANDSCAPdark%207.jpg");
-        background-size: cover;
-        background-position: center;
-    }
-    .nav{
-        height: 40%;
-        font-size: 30px;
-        font-weight: 400 ;
-    }
-    #row1 div{
-        height: 50%;
-        transform: scale(1.3);
-    }
-    #row2 div{
-        height: 50%;
-        transform: scale(1.3);
-
-    }
-    #row3 div{
-        height: 50%;
-        transform: scale(1.3);
-
-    }
-    .computer-lang{
-        width: 100px;
-    }
-    .computer-lang a{
-        font-size: 15px;
-    }
-}
-
-
-/* update */
-main .update{
-    height: 70px;
-    width: 70px;
-    background-image: url("new\ update.png");
-    background-size: cover;
-    position: fixed;
-    right:0px;
-    bottom: 0px;
-    cursor: pointer;
-    animation: zoom 1s ease-in-out infinite;
-}
-@keyframes zoom {
-    0%{transform: scale();}
-    50%{transform: scale(1.3);}
-}
-/* footer code */
-footer{
-    height: 150px;
-    width: 100%;
-    background-color: black;
-    position: relative; /* Change absolute to relative */
-    bottom: 0px;
-    margin-top: 100px; /* Optional: Adds space above the footer */
-}
-footer .logo{
+#message{
     height: 50px;
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-
 }
 button{
-    background-color: rgb(247, 141, 4);
+    background-color: #6200ea;
+    color: white;
     height: 40px;
     width: 100px;
-    border-radius: 50px
+    border-radius: 50px;
+    
+}
+#feedbackForm{
+    border: 2px solid white;
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    
 }

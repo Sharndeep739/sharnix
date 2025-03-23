@@ -28,14 +28,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-app.get('/Hkotlin', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'Hkotlin.html'));
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'kotlin-Eng.html'));
-});
-
 // ✅ Route to Submit Feedback
 app.post('/submit-feedback', async (req, res) => {
     const { name, message } = req.body;
