@@ -25,15 +25,15 @@ db.connect()
 
 // ✅ Route to Serve Static HTML Pages
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+app.get('/Hkotlin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'about.html'));
 });
 
-app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+app.get('/kotlin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'contact.html'));
 });
 
 // ✅ Route to Submit Feedback
