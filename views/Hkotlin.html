@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotlin Guide</title>
+    <link rel="stylesheet" href="kotlin-Eng.css">
+        
+</head>
+<body>
+    <header>
+        <h1>Kotlin </h1>
+    </header>
+    <div class="container">
+
+        <!-- vriable -->
+
+        <h2>Variables</h2>
+        <p>Kotlin me variables do tarike se declare kiye jate hain: <code>val</code> (jo badal nahi sakta) aur <code>var</code> (jo badal sakta hai).</p>
+        <pre>
+val name = "Sharn" // Fix variable
+var age = 20 // Change hone wala variable
+        </pre>
+        
+        <!-- explicitly  -->
+
+        <h2>Explicitly Declaring Data Types</h2>
+        <p>Kotlin me tum directly data type define kar sakte ho.</p>
+        <pre>
+val number: Int = 10
+val pi: Double = 3.14
+        </pre>
+
+        <!-- null -->
+
+        <h2>Null Variables</h2>
+        <p>Kotlin me kisi variable ko null hone dena ho toh <code>?</code> lagana padta hai.</p>
+        <pre>
+var nullableString: String? = null
+        </pre>
+        
+        <!-- lateinit aur lazy -->
+
+        <h2>Lateinit aur By Lazy</h2>
+        <p><code>lateinit</code> ka use jab hota hai jab variable ko baad me initialize karna ho.</p>
+        <pre>
+lateinit var name: String
+name = "Sharn"
+        </pre>
+        <p><code>by lazy</code> ka use jab hota hai jab variable pehli baar access hone par initialize ho.</p>
+        <pre>
+val lazyValue: String by lazy {
+    "Ye ek lazy initialization hai"
+}
+        </pre>
+
+        <!-- methoda -->
+        
+        <h2>Methods aur Functions</h2>
+        <p>Kotlin me function define aur call kaise karte hain:</p>
+        <pre>
+fun greet() {
+    println("Hello, Kotlin!")
+}
+greet()
+        </pre>
+        
+        <!-- compinio object -->
+
+        <h2>Companion Object</h2>
+        <p>Companion object ka use:</p>
+        <pre>
+class MyClass {
+    companion object {
+        fun myFunction() {
+            println("Hello from Companion Object")
+        }
+    }
+}
+MyClass.myFunction()
+        </pre>
+
+        <!-- kotline class  -->
+        
+        <h2>Kotlin Classes</h2>
+<p>Kotlin me class kaise define karte hain:</p>
+<pre>
+class Person(val name: String, val age: Int) {
+    fun greet() {
+        println("Hello, my name is $name and I am $age years old.")
+    }
+}
+
+val p = Person("Sharn", 20)
+p.greet()
+</pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotlin Guide</title>
+    <link rel="stylesheet" href="kotlin-Eng.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Kotlin</h1>
+    </header>
+    <div class="container">
+        <h2>Variables</h2>
+        <p>In Kotlin, you can declare variables using <code>val</code> (immutable) and <code>var</code> (mutable).</p>
+        <pre>
+val name = "Sharn" // Immutable variable
+var age = 20 // Mutable variable
+        </pre>
+
+        <!-- explicitly -->
+
+        <h2>Explicitly Declaring Data Types</h2>
+        <p>Kotlin allows you to explicitly declare data types.</p>
+        <pre>
+val number: Int = 10
+val pi: Double = 3.14
+        </pre>
+
+        <!-- null -->
+
+        <h2>Null Variables</h2>
+        <p>In Kotlin, variables can be nullable using <code>?</code>.</p>
+        <pre>
+var nullableString: String? = null
+        </pre>
+
+        <!-- lateinit -->
+
+        <h2>Lateinit and By Lazy</h2>
+        <p>Using <code>lateinit</code> for variables that will be initialized later:</p>
+        <pre>
+lateinit var name: String
+name = "Sharn"
+        </pre>
+        <p>Using <code>by lazy</code> for variables that are initialized when first accessed:</p>
+        <pre>
+val lazyValue: String by lazy {
+    "This is a lazy initialization"
+}
+        </pre>
+
+        <!-- methoda and funtion -->
+
+        <h2>Methods and Functions</h2>
+        <p>Defining and calling functions in Kotlin:</p>
+        <pre>
+fun greet() {
+    println("Hello, Kotlin!")
+}
+greet()
+        </pre>
+
+        <!-- companion objenct -->
+
+        <h2>Companion Object</h2>
+        <p>Using companion objects in Kotlin:</p>
+        <pre>
+class MyClass {
+    companion object {
+        fun myFunction() {
+            println("Hello from Companion Object")
+        }
+    }
+}
+MyClass.myFunction()
+        </pre>
+
+        <!-- kotline class  -->
+        
+        <h2>Kotlin Classes</h2>
+<p>How to define class in kotlin:</p>
+<pre>
+class Person(val name: String, val age: Int) {
+    fun greet() {
+        println("Hello, my name is $name and I am $age years old.")
+    }
+}
+
+val p = Person("Sharn", 20)
+p.greet()
+</pre>
+<!-- to be cont...... -->
+    </div>
+</body>
+</html>

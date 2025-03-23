@@ -268,12 +268,17 @@ header .menu{
     }
     #row1 div{
         height: 50%;
+        transform: scale(1.3);
     }
     #row2 div{
         height: 50%;
+        transform: scale(1.3);
+
     }
     #row3 div{
         height: 50%;
+        transform: scale(1.3);
+
     }
     .computer-lang{
         width: 100px;
