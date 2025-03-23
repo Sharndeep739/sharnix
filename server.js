@@ -29,11 +29,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/Hkotlin', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'about.html'));
+    res.sendFile(path.join(__dirname, 'views', 'Hkotlin.html'));
 });
 
 app.get('/kotlin', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'contact.html'));
+    res.sendFile(path.join(__dirname, 'views', 'kotlin-Eng.html'));
 });
 
 // ✅ Route to Submit Feedback
