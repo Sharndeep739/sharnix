@@ -32,7 +32,7 @@ app.get('/Hkotlin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'Hkotlin.html'));
 });
 
-app.get('/kotlin', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'kotlin-Eng.html'));
 });
 
